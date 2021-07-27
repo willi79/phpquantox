@@ -6,6 +6,8 @@
     </head>
 
     <body>
+        <?php include("header.php"); 
+            ?>
         <div style="width:50%">
             <h2>This is the list of students </h2>
         </div>
@@ -16,9 +18,8 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Action</th>
+                        <th>Student Name</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,8 +29,9 @@
                         while($student = mysqli_fetch_array($query)){
                             
                             echo "<tr>";
-                                echo "<td> <a href='students.php?student=".$student['id']."'>" .$student['id']. "</a> </td>";
-                                echo "<td>".$student['name']. "</td>";
+                                echo "<td> <a href='student.php?student=".$student['id']."'>" .$student['id']. "</a> </td>";
+                                echo "<td>".$student['studentName']. "</td>";
+                                echo "<td> <a href='edit.php?student=".$student['id']."'> Edit </a> </td>";
                             echo "<tr>";
                             
                             
